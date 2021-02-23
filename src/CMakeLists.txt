@@ -1,4 +1,5 @@
 
+add_subdirectory(journal)
 add_subdirectory(util)
 
 add_executable(jscrum
@@ -8,6 +9,7 @@ add_executable(jscrum
 
 target_link_libraries(jscrum
   jscrum_util
+  jscrum_journal
   ${Boost_LIBRARIES}
 )
 
