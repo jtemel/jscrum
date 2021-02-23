@@ -28,9 +28,11 @@ namespace jscrum {
 namespace util {
 namespace time {
 
+/**
+ * Return the current time in milliseconds since epoch.
+ */
 inline unsigned long now_ms() {
-  return milliseconds_since_epoch =
-    std::chrono::system_clock::now().time_since_epoch() / 
+  return std::chrono::system_clock::now().time_since_epoch() / 
     std::chrono::milliseconds(1);
 }
 
