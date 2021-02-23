@@ -31,13 +31,30 @@ namespace jscrum {
  * Create an empty story board (with only the created time populated).
  */
 inline nlohmann::json get_empty_board() {
-  nholmann::json json;
+  nlohmann::json json;
 
   json["name"] = "";
   json["desc"] = "";
   json["created_time"] = util::time::now_ms();
   json["total_tasks"] = 0;
   json["highest_task_num"] = 0;
+
+  return json;
+}
+
+/**
+ * Create an empty task (with only the created time populated).
+ */
+inline nlohmann::json get_empty_task() {
+  nlohmann::json json;
+
+  json["name"] = "";
+  json["desc"] = "";
+  json["label"] = "";
+  json["type"] = "";
+  json["status"] = "todo";
+  json["created_time"] = util::time::now_ms();
+  json["finished_time"] = 0;
 
   return json;
 }
