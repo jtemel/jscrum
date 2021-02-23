@@ -52,14 +52,14 @@ class jscrum_controller {
     *
     * Returns the status of the operation.
     */
-   bool edit_task(uint32_t task_num);
+   bool edit_task(int task_num);
 
    /**
     * Delete an existing task.
     *
     * Returns the status of the operation.
     */
-   bool delete_task(uint32_t task_num);
+   bool delete_task(int task_num);
 
    /**
     * Display the entire board to console.
