@@ -56,7 +56,7 @@ error_code make_jscrum_dir(const boost::filesystem::path cpath) {
 }
 
 error_code read_json_from_file(const boost::filesystem::path &fp,
-                         nlohmann::json &jdata) {
+                               nlohmann::json &jdata) {
   if (!boost::filesystem::exists(fp)) {
     return error_code::does_not_exist;
   } else if (!boost::filesystem::is_regular_file(fp)) {
