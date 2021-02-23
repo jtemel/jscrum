@@ -28,21 +28,6 @@
 #include <mutex>
 
 namespace jscrum {
-namespace journal {
-
-#define NN_SEVERITY(lvl) \
-  jscrum::journal::journal::instance().lock(); \
-  jscrum::journal::journal::instance().set_severity(jscrum::journal::journal::severity::lvl); \
-  jscrum::journal::journal::instance().unlock();
-
-#define NN_LOG(lvl, tag, str) \
-  do { \
-    jscrum::journal::journal::instance().lock(); \
-    jscrum::journal::journal::instance().stream() << str; \
-    jscrum::journal::journal::instance().log(jscrum::journal::journal::severity::lvl, tag); \
-    jscrum::journal::journal::instance().unlock(); \
-  } while (false)
-
 
 /**
  * This singleton class handles logging to the console.
@@ -129,7 +114,6 @@ class journal {
   std::mutex _lock;
 };
 
-} // namespace journal
 } // namespace jscrum
 
 #endif //__JSCRUM__JOURNAL__JOURNAL_IMPL_HPP__

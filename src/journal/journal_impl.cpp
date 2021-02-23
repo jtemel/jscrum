@@ -31,7 +31,6 @@
 #undef __JSCRUM__JOURNAL__JOURNAL_HPP__
 
 namespace jscrum {
-namespace journal {
 
 /**
  * Return the instance of the journal.
@@ -127,5 +126,4 @@ journal::colors journal::severity_to_color(severity slvl) {
   }
 }
 
-} // namespace journal
 } // namespace jscrum

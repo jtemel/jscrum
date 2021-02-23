@@ -23,22 +23,20 @@
 #include "jscrum/journal/journal_impl.hpp"
 
 namespace jscrum {
-namespace util {
 
-#define NN_SEVERITY(lvl) \
-  jscrum::util::journal::instance().lock(); \
-  jscrum::util::journal::instance().set_severity(jscrum::util::journal::severity::lvl); \
-  jscrum::util::journal::instance().unlock();
+#define JS_SEVERITY(lvl) \
+  jscrum::journal::instance().lock(); \
+  jscrum::journal::instance().set_severity(jscrum::journal::severity::lvl); \
+  jscrum::journal::instance().unlock();
 
-#define NN_LOG(lvl, tag, str) \
+#define JS_LOG(lvl, tag, str) \
   do { \
-    jscrum::util::journal::instance().lock(); \
-    jscrum::util::journal::instance().stream() << str; \
-    jscrum::util::journal::instance().log(jscrum::util::journal::severity::lvl, tag); \
-    jscrum::util::journal::instance().unlock(); \
+    jscrum::journal::instance().lock(); \
+    jscrum::journal::instance().stream() << str; \
+    jscrum::journal::instance().log(jscrum::journal::severity::lvl, tag); \
+    jscrum::journal::instance().unlock(); \
   } while (false)
 
-} // namesapce util
 } // namesapce jscrum
 
 #endif //__JSCRUM__JOURNAL__JOURNAL_HPP__
